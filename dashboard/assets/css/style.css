@@ -1,0 +1,60 @@
+.form_blog{
+    width: 66%;
+    padding: 30px;
+}
+.pupil_form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.pupil_form label{
+    grid-column: span 2;
+}
+.pupil_form h1, .pupil_form button, .pupil_form .privacy{
+    grid-column: span 4;
+}
+.error_alert{
+    background: #ffe7e7;
+    color: red;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 18px;
+    text-align: center;
+    grid-column: span 4;
+    padding: 8px 30px;
+    border-radius: 8px;
+    display: none;
+}
+.search_content{
+    max-height: 400px;
+    overflow-y: auto !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3px;
+}
+.search_results{
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+.search_results:hover{
+    background: #7e3af2 !important;
+    color: #fff !important;
+}
+.search_results:hover p{
+    color: #fff !important;
+}
+
+@media (max-width: 992px) {
+    .pupil_form label{
+        grid-column: span 4;
+    }
+    .pupil_form{
+        grid-gap: 12px;
+    }
+}
+@media (max-width: 500px) {
+    .search_phone{
+        display: none;
+    }
+}
