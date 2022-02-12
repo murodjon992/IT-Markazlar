@@ -1,0 +1,76 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+    width: 100%;
+    min-width: 260px;
+    max-width: 260px;
+    background: linear-gradient(110deg, #020024, #090979);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transition: .5s ease-in;
+}
+.page-content{
+    margin-left: 260px;
+    padding: 15px;
+    transition: .5s ease;
+}
+.logo-section{
+    background-color: #fff;
+    min-height: 60px;
+    width: 70%;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+.logo-text{
+   font-size: 30px;
+   font-weight: 700; 
+}
+.user_img{
+    border-radius: 50%!important;
+    object-fit: cover;
+}
+.user-desc p{
+    font-weight: 200;
+}
+.nav-item{
+    transition: .5s ease;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(245, 245, 239, 0.274);
+    padding: 5px;
+}
+.nav-link{
+    color: #fff;
+    font-size: 18px;
+
+}
+.nav-link i{
+    padding-right: 15px;
+}
+.nav-item:hover .nav-link{
+    color: #e1f104;
+}
+.nav-item:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: right;
+    border: transparent;
+}
+/* top bar */
+.top-bar{
+    background-color: #ececec;
+    min-height: 50px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+.usUpdate{
+    background: rgba(28, 18, 48, 0.897);
+    padding: 50px 70px;
+    color: #fff;
+}
+.usUpdate label{
+    padding-top: 20px;
+}
