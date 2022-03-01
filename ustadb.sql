@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 18, 2022 at 05:19 PM
+-- Generation Time: Mar 01, 2022 at 04:06 PM
 -- Server version: 10.5.11-MariaDB-log
--- PHP Version: 7.1.33
+-- PHP Version: 8.0.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `surname`, `gender`, `birthday`, `app_date`, `address`, `phone`, `passport`, `dev_type`, `password`) VALUES
 (5, 'dsaf', 'esefsd', 'erkak', '3541-05-04', '2341-04-23', 'dsfsdfsd', '324', '2345', 'qwedfg', 'qwdfgh'),
 (6, 'Suyunbek', 'Saydazimov', 'erkak', '2018-02-13', '2022-01-27', 'Buloqboshi', '123456', '555', 'frontend', '123'),
-(8, 'Humoyin', 'Nazarov', 'erkak', '2008-02-15', '2022-01-15', 'Buloqboshi', '9981234567', 'AA123456', 'Frontend & Backend', 'asd123'),
 (12, 'dsaf', 'esefsd', 'erkak', '3541-05-04', '2341-04-23', 'dsfsdfsd', '324', '23452345', 'qwedfg', 'qwdfgh'),
 (13, 'Suyunbek', 'Saydazimov', 'erkak', '2018-02-13', '2022-01-27', 'Buloqboshi', '123456', '5552345', 'frontend', '123'),
 (14, 'Humoyin', 'Nazarov', 'erkak', '2008-02-15', '2022-01-15', 'Buloqboshi', '9981234567', 'AA1234562345', 'Frontend & Backend', 'asd123'),
@@ -77,7 +76,7 @@ INSERT INTO `users` (`id`, `name`, `surname`, `gender`, `birthday`, `app_date`, 
 (17, 'Humoyin', 'Nazarov', 'erkak', '2008-02-15', '2022-01-15', 'Buloqboshi', '9981234567', 'AA123456324', 'Frontend & Backend', 'asd123'),
 (18, 'dsaf', 'esefsd', 'erkak', '3541-05-04', '2341-04-23', 'dsfsdfsd', '324', '23452345324', 'qwedfg', 'qwdfgh'),
 (19, 'Suyunbek', 'Saydazimov', 'erkak', '2018-02-13', '2022-01-27', 'Buloqboshi', '123456', '5552345324', 'frontend', '123'),
-(20, 'Humoyin', 'Nazarov', 'erkak', '2008-02-15', '2022-01-15', 'Buloqboshi', '9981234567', 'AA1234562345324', 'Frontend & Backend', 'asd123');
+(20, 'Abdullo', 'Nazarov', 'erkak', '2008-02-15', '2022-01-15', 'Buloqboshi', '9981234567', 'AA4534', 'Frontend', 'asd123');
 
 -- --------------------------------------------------------
 
