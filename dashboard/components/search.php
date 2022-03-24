@@ -1,7 +1,7 @@
 <?php
 include_once('db.php');
 $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
-$sql = mysqli_query($conn, "SELECT * FROM `users` WHERE (name LIKE '%{$searchTerm}%' OR surname LIKE '%{$searchTerm}%' OR phone LIKE '%{$searchTerm}%' OR passport LIKE '%{$searchTerm}%')");
+$sql = mysqli_query($conn, "SELECT * FROM `users` WHERE (name LIKE '%{$searchTerm}%' OR surname LIKE '%{$searchTerm}%' OR phone LIKE '%{$searchTerm}%' OR passport LIKE '%{$searchTerm}%' OR address LIKE '%{$searchTerm}%' OR dev_type LIKE '%{$searchTerm}%')");
 $output = '';
 
 if (mysqli_num_rows($sql) > 0) {
