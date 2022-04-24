@@ -14,14 +14,16 @@ if (isset($_POST['checkemail']) && isset($_POST['usEmail'])) {
 }
 
 
-if (isset($_POST['stuSignUp']) && isset($_POST['stName']) && isset($_POST['stEmail']) && isset($_POST['stPass'])) {
-    $usName = $_POST['stName'];
-    $usEmail = $_POST['stEmail'];
-    $usPass = $_POST['stPass'];
+if (isset($_POST['stuSignUp']) && isset($_POST['stName']) && isset($_POST['stEmail']) && isset($_POST['stPass'])  && isset($_POST['manzilA'])) {
+    $usName = mysqli_real_escape_string($conn, $_POST['stName']);
+    $usEmail = mysqli_real_escape_string($conn, $_POST['stEmail']);
+    $usPass = mysqli_real_escape_string($conn,$_POST['stPass']);
+    $manzilA = mysqli_real_escape_string($conn, $_POST['manzilA']);
+   
+    $_SESSION['usManzil'] = $manzilA;
+    $_SESSION['usIsm'] = $usName;
 
-
-
-    $sql = "INSERT INTO ustalar(us_name, us_email, us_pass) VALUES('$usName', '$usEmail', '$usPass')";
+    $sql = "INSERT INTO ustalar(us_name, us_email, us_man, us_pass) VALUES('$usName', '$usEmail', '$manzilA','$usPass')";
     if ($conn->query($sql) === TRUE) {
         echo json_encode('OK');
     } else {
@@ -30,12 +32,12 @@ if (isset($_POST['stuSignUp']) && isset($_POST['stName']) && isset($_POST['stEma
 }
 // login verifikatsiya
 if (!isset($_SESSION['is_login'])) {  
-    if (isset($_POST['checkLogemail']) && isset($_POST['usLogEmail']) && isset($_POST['usPass'])) {
+    if (isset($_POST['checkLogemail']) && isset($_POST['usLogEmail']) && isset($_POST['usPass']) && isset($_POST['manzilAd'])) {
         $usLogEmail = $_POST['usLogEmail'];
         $usPass = $_POST['usPass'];
+        $manzilAd = mysqli_real_escape_string($conn, $_POST['manzilAd']);
 
-
-        $sql = "SELECT us_email, us_pass FROM ustalar WHERE us_email = '". $usLogEmail ."' AND us_pass = '".$usPass."'";
+        $sql = "SELECT us_email, us_pass, us_man, us_name FROM ustalar WHERE us_email = '". $usLogEmail ."' AND us_pass = '".$usPass."' AND us_man = '".$manzilAd."'";
 
         $result = $conn->query($sql);
         $row = $result->num_rows;
@@ -44,6 +46,8 @@ if (!isset($_SESSION['is_login'])) {
             echo json_encode($row);
             $_SESSION['is_login'] = true;
             $_SESSION['usLogEmail'] = $usLogEmail;
+            $_SESSION['usMan'] = $manzilAd;
+            $_SESSION['us_name'] = $usName;
         } else if($row === 0){
             echo json_encode($row);
         }

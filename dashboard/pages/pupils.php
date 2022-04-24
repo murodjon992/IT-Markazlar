@@ -10,6 +10,14 @@ $pages = ceil(mysqli_num_rows($query) / $perPage);
 ?>
 <main class="h-full pb-16 overflow-y-auto">
   <div class="container grid px-6 mx-auto">
+    <div class="serch">
+      <h2 class="">QIDIRUV</h2>
+      <form action="" method="POST">
+        <input type="text" placeholder="Tuman..." name="tuman" >
+        <input type="text" placeholder="Kurs..." name="kurs" >
+        <input type="button" value="Qidirish">
+      </form>
+    </div>
     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Qo'shilgan barcha O'quvchilar</h2>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
       <div class="w-full overflow-x-auto">

@@ -1,0 +1,112 @@
+:root{
+    --asosiy-bg-rang: #8bdfa5;
+    --ikkinchi-bg-rang: #52796f;
+    --ikkinchi-yozuv: #ddbea9;
+    --asosiy-yozuv: #ee6c4d
+
+}
+*{
+    font-family: 'Poppins';
+}
+.primary-text{
+    color: var(--asosiy-yozuv);
+}
+.primary-bg{
+    background-color: var(--asosiy-bg-rang);
+}
+.second-text{
+    color: var(--ikkinchi-yozuv);
+}
+.second-bg{
+    background-color: var(--ikkinchi-bg-rang);
+}
+.second-bG{
+ background: #252428;
+}
+.rounded-full{
+    border-radius: 100%;
+}
+.dtsb-logicContainer{
+    transform: rotate(270deg)!important;
+}
+#wrapper{
+    overflow-x: hidden;
+    background: #4b4b4b;
+}
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+#sidebar-wrapper .sidebar-heading{
+    padding: 0.87rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group{
+    width: 15rem;
+}
+#page-content-wrapper #sidebar-wrapper{
+    margin-left: 0;
+}
+#menu-toggle{
+    cursor: pointer;
+}
+#tepaAdmin{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+.list-group-item{
+    border: none;
+    padding: 20px 30px;
+}
+.list-group-item.active{
+    background-color: transparent;
+    color: var(--asosiy-yozuv);
+    font-weight: 700;
+    border: none;
+}
+.side_link{
+    color: #818181;
+    font-size: 20px;
+}
+.side_link:hover{
+    background-color: rgba(255, 255, 255, 0.35)!important;
+    color: #333433;
+    backdrop-filter: blur(15px);
+}
+.side_link i{
+    margin-right: 15px;
+}
+@media (min-width: 700px){
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -15rem;
+    }
+}
+
+.infoList li{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 10px 0;
+    padding-left: 20px;
+}
+.infoList li span{
+    font-weight: 700;
+}
+table tr td{
+    padding: 5px!important;
+    top: 50%;
+
+}
+.modalBac{
+    background-color: rgba(14, 14, 14, 0.248);
+    backdrop-filter: blur(3px);
+}
+

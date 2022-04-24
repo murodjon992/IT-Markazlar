@@ -17,7 +17,7 @@ userSubmitBtn.addEventListener('click', function(){
                 let data = xhr.response;
                 if (data.includes('success')) {
                     errorInfo.innerHTML = "Muvafaqqiyatli kirildi";
-                    location.href = "/"
+                    location.href = "./dashboard/pages/profile.php"
                 } else {
                     errorInfo.innerHTML = data;
                     this.disabled = false;

@@ -35,6 +35,7 @@ function addStu(){
     let stEmail =  $('#stemail').val()
     let stPass =  $('#stpass').val()
     let stcPass =  $('#stcpass').val()
+    let manzilA = $('.selAdminMan select').val()
 
 
     if (stName.trim() == "") {
@@ -48,6 +49,10 @@ function addStu(){
     } else if(stEmail.trim() != "" && !reg.test(stEmail) ){
         $('#sucMsg2').html('<span class="text-danger">Iltimos email kiriting (namuna@gmail.com)</span>');
         $('#stemail').focus();
+        return false;
+    }  else if(manzilA.trim() == "" ){
+        $('#sucMsg5').html('<span class="text-danger">Iltimos manzil tanlang</span>');
+        $('#manzil').focus();
         return false;
     } else if (stPass.trim() == "") {
         $('#sucMsg3').html('<span class="text-danger">Iltimos parol kiriting</span>');
@@ -67,15 +72,18 @@ function addStu(){
            stName : stName,
            stEmail : stEmail,
            stPass : stPass,
+           manzilA : manzilA
 
         },
         success:function (data) {
             if (data == 'OK') {
                 $('#sucMsg').html('<span class="alert alert-success mx-auto">Tabriklaymiz ro`yhatdan o`tdingiz!</span>')
                 tozalashRegistr();
+                setTimeout(() => {
+                    $('#staticKirish').modal('show')
+                }, 1000);
             } else if(data == 'xato'){
                 $('#sucMsg').html('<span class="alert alert-danger">Ro`yhatdan o`tmadingiz!</span>')
-
             }
           }
     })
@@ -95,13 +103,15 @@ function tozalashRegistr() {
 function checkLogin(){
     let usLogEmail = $('#usLogEmail').val();
     let usPass = $('#usPass').val();
+    let manzilAd = $('#manAdmin select').val()
     $.ajax({
         type: 'POST',
         url: 'ustaBor/ustaAdd.php',
         data: {
             checkLogemail: 'checklogemail',
             usLogEmail: usLogEmail,
-            usPass: usPass
+            usPass: usPass,
+            manzilAd: manzilAd
         },
         success:function (data){
           if (data == 0) {
@@ -109,7 +119,7 @@ function checkLogin(){
           } else if(data == 1) {
             $('#statusLogMsg').html('<div class="spinner-border text-success" role="status"></div>');
             setTimeout(() => {
-               window.location.href = 'dashboard/' ;
+               window.location.href = '../managers/' ;
             }, 1000);
           }
         }

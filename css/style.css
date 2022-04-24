@@ -96,3 +96,63 @@ li {
 .footer-copyright{
     background: linear-gradient(to bottom, #000, #222);
 }
+
+/* malumot */
+.kurs_blog{
+    position: relative;    
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+.card__add{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 221, 20, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 0.5s ease;
+    color: #fff;
+    font-size: 25px;
+}
+p{
+    margin: 0 !important;
+}
+.kurs_malumot:hover .card__info{
+    transform: translateY(100%);
+}
+.kurs_malumot:hover .card__add{
+    transform: translateY(0);
+}
+.kurs_image{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    object-fit: cover;
+}
+.card__info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease;
+    background: linear-gradient(to top, rgb(8, 95, 8), rgb(20, 221, 20));
+    padding: 15px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-top-right-radius: 10px;
+
+}
+.card_title{
+    color: rgb(251, 251, 251);
+    text-shadow: 0 0 10px rgb(66, 2, 2);
+    margin: 0!important;
+    padding: 0!important;
+}

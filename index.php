@@ -1,6 +1,5 @@
 <? session_start();
-
-include('db.php'); 
+include('db.php');
 $user_phone = $_COOKIE['phone'];
 $user_password = $_COOKIE['password'];
 $user_id = $_SESSION['user_id'];
@@ -11,7 +10,7 @@ $user_id = $_SESSION['user_id'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Site</title>
+    <title>IT-Markazlar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,102 +20,180 @@ $user_id = $_SESSION['user_id'];
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light w-100 p-2 bg-dark">
+<div class="container-xxl">
+    <nav style="background-color: rgba(150, 204, 250, 0.25); backdrop-filter: blur(18px); box-shadow: 0 0 8px 2px rgba(0,0,0,0.5)" class="navbar fixed-top navbar-expand-sm w-100 p-2">
         <a href="index.php" class="navbar-brand">Andijon <span class="text-danger">IT-MARKAZ</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
-                    <li class="nav-item custom_nav"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item custom_nav"><a href="/galereya.php" class="nav-link">Galereya</a></li>
-                    <li class="nav-item custom_nav"><a href="/markaz.php" class="nav-link">Markazlar</a></li>
-                    <li class="nav-item custom_nav"><a href="/narx.php" class="nav-link">Kurs narxlari</a></li> 
-            
-             </ul>
+                <li class="nav-item custom_nav"><a href="index.php" class="nav-link">Home</a></li>
+                <li class="nav-item custom_nav"><a href="/galereya.php" class="nav-link">Galereya</a></li>
+                <li class="nav-item custom_nav"><a href="/markaz.php" class="nav-link">Markazlar</a></li>
+                <li class="nav-item custom_nav"><a href="./managers/selp.php" class="nav-link">Kurs narxlari</a></li>
+
+            </ul>
         </div>
-            <div class="form-outline">
-                <input type="search" placeholder="Izlash..." id="form1" class="form-control pl-4" />
-            </div>
-            <button type="button" class="btn btn-primary">
-                <i class="fas fa-search"></i>
-            </button>
-            </div>
-            <a href="ustaBor/user-logout.php?id=<?= $user_id?>" style="display: <?= $user_id ? 'block' : 'none'?>;" class="mr-4">Chiqish</a>
-        <button  class="btn btn-success mr-4" type="button" data-toggle="modal" data-target="#staticUserLogin" style="display: <?= !$user_id ? 'block' : 'none'?>;">Kirish</button>
+        <div class="form-outline">
+            <input type="search" placeholder="Izlash..." id="form1" class="form-control pl-4" />
+        </div>
+        <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+        
+        <a href="ustaBor/user-logout.php?id=<?= $user_id ?>" style="display: <?= $user_id ? 'block' : 'none' ?>;" class="mr-4">Chiqish</a>
+        <button class="btn btn-success mr-4" type="button" data-toggle="modal" data-target="#staticUserLogin" style="display: <?= !$user_id ? 'block' : 'none' ?>;">Kirish</button>
         <?
         if (isset($_SESSION['is_login'])) { ?>
-            <a href='logOut.php' class='btn btn-danger' type='button' data-toggle='tooltip' data-placement='bottom' title='chiqish'><i class='fas fa-sign-out-alt'></i></a>
-            <button class='btn btn-warning ml-4' type='button' data-toggle='tooltip' data-placement='bottom' title='Profil haqida'>Profilim</button>
+            <a href='./managers/' class='btn btn-danger' type='button' data-toggle='tooltip' data-placement='bottom' title='chiqish'>Kabinet</a>
         <?
         } else {
-            echo '
-                        <button data-placement="bottom" title="Akkauntga kirish" class="btn btn-success" type="button" data-toggle="modal" data-target="#staticKirish"><i class="fas fa-sign-in-alt"></i></button>
+            echo '<button data-placement="bottom" title="Akkauntga kirish" class="btn btn-success" type="button" data-toggle="modal" data-target="#staticKirish"><i class="fas fa-sign-in-alt"></i></button>
                 <button  class="btn btn-warning ml-4" type="button" data-toggle="modal" data-target="#staticBackdrop">Ro\'yhatdan o\'tish</button>
                         ';
         }
 
         ?>
-
-
-
         <!-- </div> -->
     </nav>
-
-    <div class="container-fluid">
-        <div class="vid-parent">
-            <video style="width: 100%" autoplay playsinline muted loop src="video/3D House Animation.mp4"></video>
-            <div class="vid-overlay">
-
+    </div>
+        <div id="carouselExampleInterval" class="carousel slide h-80vh" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="5000">
+                    <img src="img/web-3963945_1920.jpg" class="d-block w-100 img-fluid" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="img/web-3963945_1920.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/web-3963945_1920.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="vid-content">
-                <h1 class="my-content text-white"><strong>Andijon IT Markazlariga </strong> <span class="text-danger"> Xush kelibsiz!</span></h1> <br>
-                <small class="my-content text-white pb-2">Ishlarni ko'ring va Zavq oling!</small> <br>
-                <a href="#!" class="btn btn-danger my-1 p-2">Qani KEtdik</a>
-            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleInterval" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
         </div>
+    </div>
 
     </div>
 
     <!-- cards -->
     <div class="container-fluid cards__section">
-        <h2 class="title text-center text-white py-4">Bizdagi mavjud ishlar</h2>
-        <div class="row justify-content-between px-3">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12 px-3">
-                <div class="card text-center my-3">
-                    <img src="https://www.js-kitchen.com/wp-content/uploads/2021/03/Metal-Roofing-Materials.jpg" class="card-img-top" alt="...">
+        <h2 class="title text-center text-white py-4">Bizdagi O'quv Kurslar?</h2>
+        <div class="row ml-auto">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://www.usnews.com/dims4/USNEWS/7a6fb8a/2147483647/crop/2000x1334%2B0%2B2/resize/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F65%2F62%2Fc9cb60d24ac89d56462b1228574a%2F201009-codingcomputer-stock.jpg" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">backend</p>
+                        </div>
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title p-3">IQBOLJON usta</h5>
-                        <p class="card-text px-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary my-3 p-2">ustaga bog'lanish</a>
+                        <h2 class="card_title">Web dasturlash</h2>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12 px-3">
-                <div class="card text-center my-3">
-                    <img src="https://www.js-kitchen.com/wp-content/uploads/2021/03/Metal-Roofing-Materials.jpg" class="card-img-top" alt="...">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://justcreative.com/wp-content/uploads/2018/11/adobe-cc.jpg" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">AI, PS, FIGMA</p>
+                        </div>
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title p-3">IQBOLJON usta</h5>
-                        <p class="card-text px-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary my-3 p-2">ustaga bog'lanish</a>
+                        <h2 class="card_title">Grafik dizayn</h2>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12 px-3">
-                <div class="card text-center my-3">
-                    <img src="https://www.js-kitchen.com/wp-content/uploads/2021/03/Metal-Roofing-Materials.jpg" class="card-img-top" alt="...">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/news4367.png?itok=-G_ler6n" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">PHP, PYTHON</p>
+                        </div>
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title p-3">IQBOLJON usta</h5>
-                        <p class="card-text px-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary my-3 p-2">ustaga bog'lanish</a>
+                        <h2 class="card_title">Telegram bot</h2>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12 px-3">
-                <div class="card text-center my-3">
-                    <img src="https://www.js-kitchen.com/wp-content/uploads/2021/03/Metal-Roofing-Materials.jpg" class="card-img-top" alt="...">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://robo3.ru/upload/iblock/147/EV3_8.jpg" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">Robototexnika</p>
+                        </div>
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title p-3">IQBOLJON usta</h5>
-                        <p class="card-text px-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary my-3 p-2">ustaga bog'lanish</a>
+                        <h2 class="card_title">Robototexnika</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://robo3.ru/upload/iblock/147/EV3_8.jpg" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">Backend</p>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card_title">Node.js</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="https://tproger.ru/s3/uploads/2021/08/git-autoconverted-880x308.jpeg" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">Collaborate</p>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card_title">Git, Github</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="img/web-development (1).png" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">Bootstrap</p>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card_title">Frontend</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card_malumot">
+                    <a href="#!" class="kurs_malumot">
+                        <div class="kurs_blog">
+                            <img class="kurs_image" src="img/web-development (1).png" alt="">
+                            <p class="card__add">Ko'proq... <br><i class="fas fa-link"></i></p>
+                            <p class="card__info">Avtomatlashtirish</p>
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h2 class="card_title">Gulp</h2>
                     </div>
                 </div>
             </div>
@@ -246,6 +323,29 @@ $user_id = $_SESSION['user_id'];
                                 <label for="text"><i class="fas fa-at"></i> Email *</label><span id="sucMsg2"></span>
                                 <input type="emai" name="stemail" id="stemail" class="form-control inp" placeholder="Elektron pochta">
 
+                                <label for="text"><i class="fas fa-at"></i> Manzil *</label><span id="sucMsg5"></span>
+                                <div class="selAdminMan">
+                                <select class="form-control" name="manzil" id="manzil">
+                                            <option value="">Manzilni tanlang</option>
+                                            <option value="Andijon Shaxar">Andijon Shaxar</option>
+                                            <option value="Andijon Tuman">Andijon Tuman</option>
+                                            <option value="Asaka">Asaka</option>
+                                            <option value="Baliqchi">Baliqchi</option>
+                                            <option value="Buloqboshi">Buloqboshi</option>
+                                            <option value="Bo'ston">Bo'ston</option>
+                                            <option value="Izboskan">Izboskan</option>
+                                            <option value="Jalaquduq">Jalaquduq</option>
+                                            <option value="Marxamat">Marxamat</option>
+                                            <option value="Paxtaobod">Paxtaobod</option>
+                                            <option value="Oltinko'l">Oltinko'l</option>
+                                            <option value="Qo'rg'ontepa">Qo'rg'ontepa</option>
+                                            <option value="Shaxrixon">Shaxrixon</option>
+                                            <option disabled value="Ulug'nor">Ulug'nor</option>
+                                            <option value="Xo'jaobod">Xo'jaobod</option>
+                                            <option value="Xonobod">Xonobod</option>
+                                        </select>
+                                        </div>
+
                                 <label for="text"><i class="fas fa-lock"></i> Parol *</label><span id="sucMsg3"></span>
                                 <input type="password" name="stpass" id="stpass" class="form-control inp" placeholder="parolni kiriting">
                                 <label for="text"><i class="fas fa-lock"></i> Parolni tasdiqlang *</label><span id="sucMsg4"></span>
@@ -267,9 +367,9 @@ $user_id = $_SESSION['user_id'];
     <!-- user login -->
     <div class="modal fade" id="staticKirish" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticKirishLabel" aria-hidden="true">
         <div class="modal-dialog modalCenter">
-            <div class="modal-content">
-                <div class="modal-header bg-success">
-                    <h5 class="modal-title text-white" id="staticKirishLabel">Kirish</h5>
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticKirishLabel">Kirish</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -283,6 +383,29 @@ $user_id = $_SESSION['user_id'];
 
                                 <label for="text"><i class="fas fa-lock"></i> Parol *</label>
                                 <input type="password" id="usPass" class="form-control inp" placeholder="parolni kiriting">
+
+                                <div id="manAdmin" class="selAdminMan mt-4">
+                                    <select class="form-control" name="manzil" id="manzilA">
+                                            <option value="">Manzilni tanlang</option>
+                                            <option value="Andijon Shaxar">Andijon Shaxar</option>
+                                            <option value="Andijon Tuman">Andijon Tuman</option>
+                                            <option value="Asaka">Asaka</option>
+                                            <option value="Baliqchi">Baliqchi</option>
+                                            <option value="Buloqboshi">Buloqboshi</option>
+                                            <option value="Bo'ston">Bo'ston</option>
+                                            <option value="Izboskan">Izboskan</option>
+                                            <option value="Jalaquduq">Jalaquduq</option>
+                                            <option value="Marxamat">Marxamat</option>
+                                            <option value="Paxtaobod">Paxtaobod</option>
+                                            <option value="Oltinko'l">Oltinko'l</option>
+                                            <option value="Qo'rg'ontepa">Qo'rg'ontepa</option>
+                                            <option value="Shaxrixon">Shaxrixon</option>
+                                            <option disabled value="Ulug'nor">Ulug'nor</option>
+                                            <option value="Xo'jaobod">Xo'jaobod</option>
+                                            <option value="Xonobod">Xonobod</option>
+                                        </select>
+                                    </div>
+
                             </div>
                         </div>
                     </form>
@@ -342,9 +465,9 @@ $user_id = $_SESSION['user_id'];
                         <div class="form-row">
                             <div class="col-10 offset-1">
                                 <label for="text"><i class="fas fa-phone"></i> Telefon raqam *</label>
-                                <input type="email" name="phone" value="<?= $user_phone ? $user_phone : ''?>" class="form-control inp" placeholder="Telefon raqamni kiriting" required>
+                                <input type="email" name="phone" value="<?= $user_phone ? $user_phone : '' ?>" class="form-control inp" placeholder="Telefon raqamni kiriting" required>
                                 <label for="text"><i class="fas fa-lock"></i> Parol *</label>
-                                <input type="password" name="password" value="<?= $user_password ? $user_password : ''?>" class="form-control inp" placeholder="Parolni kiriting" required>
+                                <input type="password" name="password" value="<?= $user_password ? $user_password : '' ?>" class="form-control inp" placeholder="Parolni kiriting" required>
                             </div>
                         </div>
                     </form>
@@ -368,18 +491,6 @@ $user_id = $_SESSION['user_id'];
     <script src="js/ajaxRequest.js?v=<?= time(); ?>"></script>
     <script src="js/adminAjaxRequest.js?v=<?= time(); ?>"></script>
     <script src="js/userLogin.js?v=<?= time(); ?>"></script>
-    <script type="text/javascript">
-        function kechir(){
-            // e.preventDefault()
-            swal({
-                text: "Kechirasiz avval ro'yhatdan o'ting",
-                icon: 'warning',
-                className: 'red-bg'
-            });
-        }
-    </script>
-
-
 </body>
 
 </html>
