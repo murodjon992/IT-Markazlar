@@ -28,12 +28,12 @@ if (!isset($_SESSION)) {
                 <div class="logo-section d-flex justify-content-center align-items-center">
                     <div class="d-flex justify-content-center align-items-center"><img src="logo-icon" alt=""><span class="logo-text">Ncode</span>
                 </div>
-                </div>
-                <div class="user-info">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <div>
-                            <img class="user_img" style="width: 180px; height: 180px;" src="../img/02.JPG" alt="profilimg">
-                        </div>
+            </div>
+            <div class="user-info">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div>
+                        <img class="user_img" style="width: 180px; height: 180px;" src="../img/02.JPG" alt="profilimg">
+                    </div>
                         <div class="user-desc text-white text-center">
                             <h4>Murodjon</h4>
                             <p>WEB DEVELOPER</p>
@@ -56,6 +56,7 @@ if (!isset($_SESSION)) {
             <div class="page-content">
                 <div class="top-bar d-flex align-items-center">
                     <div class="d-flex justify-content-center align-items-center w-100">
+                        <?var_dump($_SESSION['adminLogEmail']);?>
                         <button class="toggler btn btn-dark"><i class="fas fa-bars"></i></button>
                         <div class="top-bar-right">
                             <button>nimadir</button>

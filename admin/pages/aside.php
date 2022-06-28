@@ -1,9 +1,9 @@
 <?
 include_once('../db.php');
-if (!isset($_SESSION)) {
+if ($_SESSION['adminLogEmail'] === 'delux8333@gmail.com') {
     session_start();
 } else {
-    echo '<script>window.location.href="index.php"</script>;';
+    echo '<script>window.location.href="/"</script>;';
 }
 ?>
 <!DOCTYPE html>

@@ -2,14 +2,15 @@
     --asosiy-bg-rang: #8bdfa5;
     --ikkinchi-bg-rang: #52796f;
     --ikkinchi-yozuv: #ddbea9;
-    --asosiy-yozuv: #ee6c4d
+    --asosiy-yozuv: #ee6c4d;
 
 }
 *{
     font-family: 'Poppins';
+    box-sizing: border-box!important;
 }
 .primary-text{
-    color: var(--asosiy-yozuv);
+    color: #0dcd4d;
 }
 .primary-bg{
     background-color: var(--asosiy-bg-rang);
@@ -20,8 +21,11 @@
 .second-bg{
     background-color: var(--ikkinchi-bg-rang);
 }
+#table_id{
+    /* background-color: #f4ab4f !important; */
+}
 .second-bG{
- background: #252428;
+ background: #eceff1;
 }
 .rounded-full{
     border-radius: 100%;
@@ -31,7 +35,7 @@
 }
 #wrapper{
     overflow-x: hidden;
-    background: #4b4b4b;
+    background: #0dcd4d;
 }
 #sidebar-wrapper{
     min-height: 100vh;
@@ -39,7 +43,7 @@
     transition: margin 0.25s ease-out;
 }
 #sidebar-wrapper .sidebar-heading{
-    padding: 0.87rem;
+    padding: 0.4rem;
     font-size: 1.2rem;
 }
 #sidebar-wrapper .list-group{
@@ -58,22 +62,28 @@
 }
 .list-group-item{
     border: none;
-    padding: 20px 30px;
+    padding: 12px 20px;
 }
-.list-group-item.active{
-    background-color: transparent;
-    color: var(--asosiy-yozuv);
-    font-weight: 700;
-    border: none;
-}
+
 .side_link{
-    color: #818181;
+    color: #14b670;
     font-size: 20px;
+    font-weight: 300;
+    width: 85%;
+    transition: .3s linear;
+}
+.side_link.active{
+    background: linear-gradient(to top, #0dcd4d, #26f46b);
+    color: #ffffff;
+    border-top-right-radius: 10px;
+    width: 98%;
+    border-bottom-right-radius: 10px;
+    text-shadow: 0 0 8px #000;
 }
 .side_link:hover{
-    background-color: rgba(255, 255, 255, 0.35)!important;
-    color: #333433;
-    backdrop-filter: blur(15px);
+    background-color: #0dcd4d!important;
+    color: #ffffff;
+    width: 100%;
 }
 .side_link i{
     margin-right: 15px;
@@ -106,7 +116,19 @@ table tr td{
 
 }
 .modalBac{
-    background-color: rgba(14, 14, 14, 0.248);
-    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+}
+input::placeholder{
+    font-weight: 300;
 }
 
+.modalStyle input {
+    background: transparent!important;
+}
+.devType, .thKurs{
+    width: 220px;
+}
+.thHolat{
+    width: 40px;
+}

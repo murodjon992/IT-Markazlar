@@ -24,7 +24,3 @@ function checkAdminLogin(){
     })
 }
 
-
-function bildirish(e) {
-  
-}

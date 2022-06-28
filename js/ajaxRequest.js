@@ -125,3 +125,38 @@ function checkLogin(){
         }
     })
 }
+
+
+function logStudent(){
+   let userTel = $('#userTel').val()
+   let userPas = $('#userPas').val()
+
+
+   if (userTel.trim() == '') {
+         $('#userLogmsg').html('<span class="text-danger text-right">Telefon kiriting</span>');
+         $('#userTel').focus()
+    } else if(userPas.trim() == ''){
+         $('#userPasmsg').html('<span class="text-danger text-right">Parol kiriting</span>');
+         $('#userPas').focus()
+   }else {
+       $.ajax({
+       type: 'POST',
+       url: '../ustaBor/user-login.php',
+       data: {
+           userTel: userTel,
+           userPas: userPas
+       },
+       success:function(data){
+        if (data == 0) {
+            $('#errorInfo').html('<small class="alert alert-danger">Email yoki Parol xato!</small>')
+        } else if(data == 1) {
+          $('#errorInfo').html('<div class="spinner-border text-success" role="status"></div>');
+          setTimeout(() => {
+             window.location.href = '../user-info.php' ;
+          }, 1000);
+        }
+       }
+   })
+}
+
+}

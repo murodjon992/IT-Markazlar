@@ -7,23 +7,23 @@ if (!isset($_SESSION)) {
   $mydata = json_decode($data, true);
   $id = $mydata['sid'];
 
-
+  
   if (!empty($id)) {
-      $sql = "DELETE FROM users WHERE id = {$id}";
-      if ($conn->query($sql) == true) {
-         echo 'O`quvchi muvaffaqyatli o`chirildi';
-        } else {
-          echo 'Student not deleted';
-
-      }
+    $sql = "DELETE FROM users WHERE id = {$id}";
+    if ($conn->query($sql) == true) {
+      echo 'O`quvchi muvaffaqyatli o`chirildi';
+    } else {
+      echo 'Student not deleted';
+      
+    }
   }
-
-$userid = $_POST['id'];
-
-$sql = "SELECT * FROM users WHERE id = {$userid}";
-$result = mysqli_query($conn, $sql);
-while($row = mysqli_fetch_assoc($result)){
-?>
+  
+  $userid = $_POST['id'];
+  
+  $sql = "SELECT * FROM users WHERE id = {$userid}";
+  $result = mysqli_query($conn, $sql);
+  while($row = mysqli_fetch_assoc($result)){
+    ?>
 <link rel="stylesheet" href="../css/style.css?v=<?= time()?>">
 <h6 style="text-align: center;"><strong class="font-italic text-primary text-uppercase text-shadow"><?= $row['name']?> </strong> haqida malumot</h6>
 <table width='100%'>
@@ -36,9 +36,24 @@ while($row = mysqli_fetch_assoc($result)){
         <li>Tug'ilgan sanasi: <span><?= $row['birthday']?></span></li>
         <li>Markazga kelgan sana: <span><?= $row['app_date']?></span></li>
         <li>Manzil: <span> <?= $row['address']?></span></li>
+        <li>Holati: <span> <?
+        if($row['status'] == '0'){
+          echo 'O`qiyapti';}
+          else if($row['status'] == '1'){
+            echo 'Bitirgan';}
+        else{
+          echo 'Ketgan';
+        }
+        ?></span></li>
+        <?
+        $man = $_SESSION['usMan'];
+        $adres = $row['address'];
+        ?>
         <li>Telefon: <span> <?= $row['phone']?></span></li>
         <li>PAssport(MEtrka): <span> <?= $row['passport']?></span></li>
         <li>Kursi: <span> <?= $row['dev_type']?></span></li>
+        <li>To'lov: <span><?= $man == $adres ? $row['dur_price'] . ' so`m' : 'faqat menejerga ko`rinadi'?></span></li>
+        
       </ul>
       
     </td>

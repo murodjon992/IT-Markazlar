@@ -2,9 +2,9 @@
 include('header.php');
 if (!isset($_SESSION)) {
     session_start();
-  };
-  $man =  stripslashes($_SESSION['usMan']);
-  ?>
+};
+$man =  stripslashes($_SESSION['usMan']);
+?>
 
 <div class="container-fluid">
     <div class="row g-3 my-2">
@@ -17,18 +17,18 @@ if (!isset($_SESSION)) {
         <div class="container-fluid">
             <!-- Button trigger modal -->
             <div id="tepaAdmin" class="input-group">
-                <button type="button" class="btn btn-primary mb-2 shadow" data-toggle="modal" data-target="#staticBackdrop">
+                <button type="button" class="btn btn-light mb-2 shadow" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     O'quvchi Qo'shish
                 </button>
             </div>
-            
+
             <!-- Modal -->
             <div class="modal fade modalBac" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl modalCenter">
-                    <div class="modal-content">
+                    <div class="modal-content modalStyle">
                         <div class="modal-header bg-warning">
                             <h5 class="modal-title" id="staticBackdropLabel">O'quvchilarni ro'yhatdan o'tkazish</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -36,44 +36,44 @@ if (!isset($_SESSION)) {
                         <div class="modal-body modalInner">
                             <form id="usRegForm" class="row g-3">
                                 <!-- <div class="row g-3"> -->
-                                    <div class="col-md-12 row mt-3">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="pb-2" for="text"><i class="fa fa-user"></i> Ismi <span class="text-danger"> * </span></label>
-                                                <input type="text" name="stuname" id="stuname" class="form-control inp" placeholder="Ism... ">
-                                                <span id="sucMsg1"></span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="pb-2" for="text"><i class="fas fa-at"></i> Familiyasi <span class="text-danger"> * </span></label>
-                                            <input type="emai" name="stLastname" id="stLastname" class="form-control inp" placeholder="Familiya...">
-                                            <span id="sucMsg2"></span>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="pb-2" for="text"><i class="fas fa-phone-alt"></i> Telefon raqami <span class="text-danger"> * </span></label>
-                                            <input name="phone" id="phone" class="form-control" type="text" placeholder="901234567">
-                                            <span id="sucMsg3"></span>
+                                <div class="col-md-12 row mt-3">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="pb-2" for="text"><i class="fa fa-user"></i> Ismi <span class="text-danger"> * </span></label>
+                                            <input type="text" name="stuname" id="stuname" class="form-control inp" placeholder="Ism... ">
+                                            <span id="sucMsg1"></span>
                                         </div>
                                     </div>
-                                    <div class="col-xl-12 row mt-3">
-                                        <div class="col-3">
-                                            <label class="pb-2" for="text"><i class="fas fa-globe"></i> MANZIL <span class="text-danger"> * </span></label><br>
-                                            <select class="form-control" name="manzil" id="manzil">
-                                                <option value="">Manzilni tanlang</option>
-                                                <option value="Andijon Shaxar">Andijon Shaxar</option>
-                                                <option value="Andijon Tuman">Andijon Tuman</option>
-                                                <option value="Asaka">Asaka</option>
-                                                <option value="Baliqchi">Baliqchi</option>
-                                                <option value="Buloqboshi">Buloqboshi</option>
-                                                <option value="Bo'ston">Bo'ston</option>
-                                                <option value="Izboskan">Izboskan</option>
-                                                <option value="Jalaquduq">Jalaquduq</option>
-                                                <option value="Marxamat">Marxamat</option>
-                                                <option value="Paxtaobod">Paxtaobod</option>
-                                                <option value="Oltinko'l">Oltinko'l</option>
-                                                <option value="Qo'rg'ontepa">Qo'rg'ontepa</option>
-                                                <option value="Shaxrixon">Shaxrixon</option>
-                                                <option disabled value="Ulug'nor">Ulug'nor</option>
+                                    <div class="col-md-4">
+                                        <label class="pb-2" for="text"><i class="fas fa-at"></i> Familiyasi <span class="text-danger"> * </span></label>
+                                        <input type="emai" name="stLastname" id="stLastname" class="form-control inp" placeholder="Familiya...">
+                                        <span id="sucMsg2"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="pb-2" for="text"><i class="fas fa-phone-alt"></i> Telefon raqami <span class="text-danger"> * </span></label>
+                                        <input name="phone" id="phone" class="form-control" type="text" placeholder="901234567">
+                                        <span id="sucMsg3"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 row mt-3">
+                                    <div class="col-3">
+                                        <label class="pb-2" for="text"><i class="fas fa-globe"></i> MANZIL <span class="text-danger"> * </span></label><br>
+                                        <select class="form-control" name="manzil" id="manzil">
+                                            <option value="">Manzilni tanlang</option>
+                                            <option value="Andijon Shaxar">Andijon Shaxar</option>
+                                            <option value="Andijon Tuman">Andijon Tuman</option>
+                                            <option value="Asaka">Asaka</option>
+                                            <option value="Baliqchi">Baliqchi</option>
+                                            <option value="Buloqboshi">Buloqboshi</option>
+                                            <option value="Bo'ston">Bo'ston</option>
+                                            <option value="Izboskan">Izboskan</option>
+                                            <option value="Jalaquduq">Jalaquduq</option>
+                                            <option value="Marxamat">Marxamat</option>
+                                            <option value="Paxtaobod">Paxtaobod</option>
+                                            <option value="Oltinko'l">Oltinko'l</option>
+                                            <option value="Qo'rg'ontepa">Qo'rg'ontepa</option>
+                                            <option value="Shaxrixon">Shaxrixon</option>
+                                            <option disabled value="Ulug'nor">Ulug'nor</option>
                                             <option value="Xo'jaobod">Xo'jaobod</option>
                                             <option value="Xonobod">Xonobod</option>
                                         </select>
@@ -100,6 +100,18 @@ if (!isset($_SESSION)) {
                                         </select>
                                     </div>
                                     <div class="col-3">
+                                        <label class="pb-2" for="text"><i class="fas fa-hourglass-end"></i> Kurs davomiyligi (oy)<span class="text-danger"> * </span></label>
+                                        <br><span id="kursDavom"></span>
+                                        <input id="duration" type="number" class="form-control" placeholder="raqam kiriting">
+                                    </div>
+                                    <div class="col-3">
+                                        <label class="pb-2" for="text"><i class="fas fa-money-bill-alt"></i> Kurs Narxi (1 oy uchun)<span class="text-danger"> * </span></label>
+                                        <span id="kursNarx"></span>
+                                        <input id="kursPrice" type="number" class="form-control" placeholder="raqam kiriting">
+                                    </div>
+                                    </div>
+                                <div class="col-12 row mt-3">
+                                    <div class="col-3">
                                         <label class="pb-2" for="text"><i class="far fa-calendar-alt"></i></i> Tug'ilgan sana <span class="text-danger"> * </span></label><span id="sucMsg6"></span><br>
                                         <input class="form-control" id="date" type="date" name="date">
                                     </div>
@@ -107,8 +119,7 @@ if (!isset($_SESSION)) {
                                         <label class="pb-2" for="text"><i class="far fa-calendar-alt"></i></i> Kelgan sana <span class="text-danger"> * </span></label><span id="sucMsg7"></span><br>
                                         <input class="form-control" id="appDate" type="date" name="appDate">
                                     </div>
-                                </div>
-                                <div class="col-12 row mt-3">
+                               
                                     <div class="col-md-3">
                                         <label class="pb-2" for="text"><i class="fas fa-lock"></i> Parol <span class="text-danger"> * </span></label><span id="sucMsg8"></span>
                                         <input type="password" name="stpass" id="stpass" class="form-control inp" placeholder="parolni kiriting">
@@ -128,33 +139,38 @@ if (!isset($_SESSION)) {
                                     <div class="col-md-3">
                                         <label class="pb-2" for="text"><i class="fas fa-phone-alt"></i> Passport (Metrka) <span class="text-danger"> * </span></label><span id="sucMsg11"></span>
                                         <input class="form-control" name="selfId" id="selfId" type="text" placeholder="AB1234567">
-                                        
+
                                     </div>
                                 </div>
+                                <div class="col-12 row mt-2">
+                                   
+                                </div>
+                                <input class="form-control" name="status" id="status" type="hidden" value="0">
                                 <!-- </div> -->
                             </form>
                         </div>
                         <div class="modal-footer modalInner justify-content-center">
                             <span class="p-3" id="sucMsg"></span>
-                            <div> <button type="button" aria-hidden="true" class="btn btn-danger" aria-label="Close" data-dismiss="modal">Bekor qilish</button>
-                            <button id="signUp" type="button" class="btn btn-primary" onclick="addStu()">Ro'yhatdan o'tish</button>
+                            <div> <button type="button" aria-hidden="true" class="btn btn-danger" aria-label="Close" data-bs-dismiss="modal">Bekor qilish</button>
+                                <button id="signUp" type="button" class="btn btn-primary" onclick="addStu()">Ro'yhatdan o'tish</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <table id="table_id" class="table table-dark shadow table-hover">
-            <thead>
-                <tr>
-                    <th>№</th>
+            <table id="table_id" class="table table-light shadow table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>№</th>
                         <th>Ismi</th>
                         <th>Familiyasi</th>
                         <th>Jinsi</th>
                         <th>Yozilgan sana</th>
+                        <th>To'lov(qoldiq)</th>
                         <th>Manzil:</th>
                         <th>Telefon</th>
-                        <th>Passport</th>
-                        <th>Kursi</th>
+                        <th class="thHolat">Holati</th>
+                        <th class="thKurs">Kursi</th>
                         <th>Xarakatlar</th>
                     </tr>
                 </thead>
@@ -171,19 +187,34 @@ if (!isset($_SESSION)) {
                             <td><?= $row['surname'] ?></td>
                             <td><?= $row['gender'] ?></td>
                             <td><?= $row['app_date'] ?></td>
+                            <? $ad = $row['address'] ?>
+                            <td><?if ($ad == $man) {?>
+                                <p class="text-success"><strong><?= $row['dur_price']?> so'm </strong></p>
+                                <?} else {?>
+                                    <p class="text-danger">kechirasiz</p>
+                            
+                            <?}?></td>
                             <td>
-                                <? $ad = $row['address']?>
-                                <p style="border-radius: 10px;" class="bg-secondary p-1 text-light text-center shadow rounded"><?= $ad ?></p>
+                                <p style="border-radius: 10px;" class="bg-success py-2 text-light text-center shadow rounded"><?= $ad ?></p>
                             </td>
                             <td><?= $row['phone'] ?></td>
-                            <td><?= $row['passport'] ?></td>
                             <td>
-                                <p style="border-radius: 10px;" class="bg-secondary p-1 text-light text-center rounded"><?= $row['dev_type'] ?></p>
+                                
+                                <? if ($row['status'] == '0') : ?>
+                                    <p class="btn btn-info">O'qiyapti</p>
+                                    <? elseif ($row['status'] == '1') : ?>
+                                        <p class="btn btn-success">Bitirgan</p>
+                                <? elseif ($row['status'] == '2') : ?>
+                                    <p class="btn btn-danger">Ketgan</p>
+                                <? endif; ?>
+                            </td>
+                            <td>
+                                <p class="bg-success py-2 text-light text-center rounded devType"><?= $row['dev_type'] ?></p>
                             </td>
                             <td>
                                 <button class="btn btn-info shadow" data-info="<?= $row['id'] ?>" id="infoUser"><i class="fas fa-info"></i></button>
-                                <button id="btnEdit" <?= $man == $ad ? '' : 'disabled'?> type="button" data-toggle="modal" data-edit="<?= $row['id'] ?>" class="btn btn-success mr-1 shadow "><i class="fas fa-edit"></i></button>
-                                <button <?= $man == $ad ? '' : 'disabled'?> id="btnDel" data-sid="<?= $row['id'] ?>" class="btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
+                                <button id="btnEdit" <?= $man == $ad ? '' : 'disabled' ?> type="button" data-toggle="modal" data-edit="<?= $row['id'] ?>" class="btn btn-success mr-1 shadow "><i class="fas fa-edit"></i></button>
+                                <button <?= $man == $ad ? '' : 'disabled' ?> id="btnDel" data-sid="<?= $row['id'] ?>" class="btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
 
@@ -212,6 +243,7 @@ if (!isset($_SESSION)) {
 
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-outline-info" onclick="window.print()">chop etish</button>
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Chiqish</button>
             </div>
         </div>
@@ -232,8 +264,8 @@ if (!isset($_SESSION)) {
             <div class="modal-body">
                 <form id="usRegForm">
                     <div class="form-row">
-                    <input type="hidden" class="updateId">
-                    <div class="col-12 row">
+                        <input type="hidden" class="updateId">
+                        <div class="col-12 row">
                             <div class="col-4">
                                 <div class="form-group">
                                     <label for="text"><i class="fa fa-user"></i> Ismi <span class="text-danger"> *</span></label>
@@ -316,8 +348,8 @@ if (!isset($_SESSION)) {
                             <div class="col-3" style="font-size: 20px;">
                                 <label class="mt-2" for="text"><i class="fas fa-users"></i> Jinsi <span class="text-danger"> *</span></label><span id="sucMsg30"></span><br>
                                 <div id="jinsId" class="d-flex align-items-center">
-                                    <input class="mr-1" style="width: 18px; height: 18px;" type="radio" value="erkak" name="gender">Erkak
-                                    <input class="ml-3" style="width: 18px; height: 18px;" type="radio" value="ayol" name="gender">Ayol
+                                    <input class="mr-1" style="width: 18px; height: 18px;" type="radio" value="erkak" name="genderE">Erkak
+                                    <input class="ml-3" style="width: 18px; height: 18px;" type="radio" value="ayol" name="genderE">Ayol
                                 </div>
                             </div>
                             <div class="col-3">
@@ -325,6 +357,24 @@ if (!isset($_SESSION)) {
                                 <input class="form-control" id="eId" type="text" placeholder="AB1234567">
                                 <span id="sucMsg29"></span>
                             </div>
+                        </div>
+                        <div class="col-12 row">
+                        <div class="col-3 stat">
+                            <label class="" for=""><i class="fas fa-bell"></i> Holati<span class="text-danger"> *</span></label>
+                            <select class="form-control" name="stat" id="stat">
+                                <option value="0">O'qiyapti</option>
+                                <option value="1">Bitirgan</option>
+                                <option value="2">Ketgan</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="text">Qoldiq qarz</label>
+                            <input readonly class="form-control" type="number" id="priceEdit">
+                        </div>
+                        <div class="col-3">
+                            <label for="text">To'lov berdi</label>
+                            <input class="form-control" type="number" id="priceEditBerdi">
+                        </div>
                         </div>
                     </div>
                 </form>
@@ -368,13 +418,13 @@ if (!isset($_SESSION)) {
                     extend: 'excelHtml5',
                     text: '<i class="fas fa-file-excel"></i>',
                     titleAttr: 'Excelga yuborish',
-                    className: 'btn btn-success mr-3'
+                    className: 'btn btn-success mr-3 shadow'
                 },
                 {
                     extend: 'pdfHtml5',
                     text: '<i class="fas fa-file-pdf"></i>',
                     titleAttr: 'PDFga yuborish',
-                    className: 'btn btn-danger'
+                    className: 'btn btn-danger shadow'
                 }
             ],
         });

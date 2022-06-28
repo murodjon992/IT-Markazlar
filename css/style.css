@@ -7,19 +7,28 @@ video{
     height: 100vh;
 }
 .custom_nav{
-    border: 1px solid rgb(238, 8, 8);
+    border: 1px solid rgb(27, 95, 39);
     border-radius: 4px;
     margin: 0 10px!important;
-    background-color: rgb(236, 220, 219);
+    background-color: #0dcd4dc1;
     transition: 0.5s ease;
+    padding: 0 12px;
     display: inline-block;
 }
+.logo{
+    color: #fff;
+    text-transform: uppercase;
+}
 .custom_nav:hover{
-    background-color: rgb(39, 35, 34);
-    color: #000;
+    background-color: transparent;
+}
+.custom_nav:hover .nav-link{
+    color: #0dcd4d;
+    border: rgb(0, 255, 85);
 }
 .nav-link{
-    color: rgb(179, 11, 25)!important;
+    color: rgb(252, 247, 248);
+    text-transform: uppercase;
 }
 .vid-parent{
     position: relative;
@@ -43,7 +52,7 @@ video{
         text-align: center;
  }
  .cards__section{
-     background: linear-gradient(110deg, rgb(192, 5, 5) 5%,blue, transparent);
+     background: rgb(255, 255, 255);
  }
 
 
@@ -51,22 +60,20 @@ video{
      width: 400px;
      border: 1px solid #9e9d9d;
      padding: 15px!important;
-     border-left: 4px solid red;
-     background: #626262;
+     border-left: 4px solid rgb(1, 25, 11);
+     background: #0dcd4d;
+     border-radius: 5px;
  }
 .card_text{
      font-style: italic;
      font-size: 15px;
      text-align: justify;
 }
- .card_title{
-     font-size: 20px;
-}
 .client_img{
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 2px solid rgb(119, 5, 5);
+    border: 2px solid rgb(11, 11, 11);
 }
 .our_client{
     display: flex;
@@ -92,6 +99,7 @@ li {
 }
 .footer{
     padding-bottom: 0!important;
+    background-color: #0dcd4d;
 }
 .footer-copyright{
     background: linear-gradient(to bottom, #000, #222);
@@ -104,6 +112,7 @@ li {
     width: 300px;
     height: 300px;
     border-radius: 10px;
+   
 
 }
 .card__add{
@@ -124,6 +133,12 @@ li {
 p{
     margin: 0 !important;
 }
+.card_malumot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .kurs_malumot:hover .card__info{
     transform: translateY(100%);
 }
@@ -151,8 +166,113 @@ p{
 
 }
 .card_title{
-    color: rgb(251, 251, 251);
-    text-shadow: 0 0 10px rgb(66, 2, 2);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(3, 4, 3);
     margin: 0!important;
     padding: 0!important;
+    font-weight: 700;
+    font-size: 22px;
+}
+.indiBar{
+    width: 10%;
+    height: 3px;
+    position: fixed;
+    z-index: 996;
+    top: 58px;
+    background-color: rgb(34, 235, 7);
+    box-shadow: 0 2px 12px 2px rgb(28, 219, 7);
+}
+.drMenu{
+    position: relative;
+    display: inline-block;
+    transition: 0.7s linear;
+}
+.dropdow-menu{
+    display: flex;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    min-width: 150px;
+    border-radius: 6px;
+    z-index: 200;
+}
+.dropdow-menu ul li:hover{
+    background-color: rgba(0, 8, 255, 0.881);
+    color: #fff;
+}
+.dropdow-menu ul li:hover .drLink{
+    color: #fff;
+    text-decoration: none;
+}
+.dropdow-menu{
+    padding: 0 !important;
+    margin: 0 !important;
+    display: none;
+    flex-direction: column;
+    
+}
+.dropdow-menu::before{
+    content: '';
+    width: 20px;
+    z-index: -1;
+    height: 20px;
+    background-color: rgb(253, 253, 253);
+    display: block;
+    right: 10px;
+    top: -7px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+.dropdow-menu ul{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.dropdow-menu ul li{
+    padding: 5px 10px;
+}
+
+a{
+    text-decoration: none;
+}
+.drMenu:hover .dropdow-menu{
+    transition: 0.7s ease;
+    display: block;
+}
+.lang_uz img{
+    width: 25px;
+}
+.lang{
+    padding-right: 100px;
+}
+
+.popup{
+    background-color: rgba(0, 0, 0, 0.779);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+.popup-content{
+    width: 60%;
+    background-color: red;
+    height: 70%;
+    position: relative;
+}
+.popup-content img{
+    width: 100%;
+    height: 100%;
+}
+.close{
+    top: -40px;
+    color: #fff;
+    right: -40px;
+    position: absolute;
+    padding: 5px 8px;
 }

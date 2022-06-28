@@ -3,17 +3,34 @@
 </div>
 
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>  <script type="text/javascript">
+  <script src="js/main.min.js"></script>
+ 
+  <script type="text/javascript">
       var el = document.querySelector('#wrapper');
       var toggButton = document.querySelector('#menu-toggle');
     
       toggButton.addEventListener('click', function(){
           el.classList.toggle('toggled')
         })
-  </script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('cal');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    themeSystem: 'bootstrap4',
+    selectable:true,
+    editable: true,
+    headerToolbar: { 
+      left: 'dayGridMonth,timeGridWeek',
+      center: 'title',
+      right: 'prev next today'
+    },
+  });
+  calendar.render();
+  
+});
+
+       
+</script>
 </body>
 </html>

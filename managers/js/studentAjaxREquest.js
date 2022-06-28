@@ -10,6 +10,10 @@ function addStu() {
   let stcPass = $("#stcpass").val();
   let jins = $("input[name=gender]:checked").val();
   let selfId = $("#selfId").val();
+  let status = $("#status").val();
+  let dura =$("#duration").val()
+  let kursPrice = $("#kursPrice").val()
+  let durPrice = kursPrice * dura
 
 
   if (stName.trim() == "") {
@@ -34,7 +38,20 @@ function addStu() {
     $("#sucMsg5").html('<span class="text-danger">Kursni tanlang</span>');
     $("#kurs").focus();
     return false;
-  } else if (sana.trim() == "") {
+  }  else if(dura.trim() == 0){
+    $("#kursDavom").html(
+      '<span class="text-danger">Davomiyligini kiriting?</span>'
+    );
+    $("#duration").focus();
+    return false;
+  } else if(kursPrice.trim() == 0){
+    $("#kursNarx").html(
+      '<span class="text-danger">Narx kiriting?</span>'
+    );
+    $("#kursPrice").focus();
+    return false;
+  }
+   else if (sana.trim() == "") {
     $("#sucMsg6").html(
       '<span class="text-danger">Tug`ilgan sanani tanlang</span>'
     );
@@ -62,7 +79,7 @@ function addStu() {
     );
     $("#selfId").focus();
     return false;
-  } else {
+  }  else {
     $.ajax({
       type: "POST",
       url: "../../managers/students/addStudent.php",
@@ -78,6 +95,9 @@ function addStu() {
         stPass: stPass,
         jins: jins,
         selfId: selfId,
+        status: status,
+        durPrice: durPrice
+
       },
       success: function (data) {
         if (data == "OK") {
@@ -133,6 +153,8 @@ $('tbody').on('click', '#btnEdit', function(){
       $('.inpE').val(data.password)
       $('#staticBackdropEdit').modal('show')
       $("#eId").val(data.passport)
+      $('.stat select').val(data.status)
+      $('#priceEdit').val(data.dur_price);
     }
   })
 })
@@ -180,7 +202,10 @@ function upStu(){
  let parol = $('#stUpass').val()
  let parolT = $('#stcUpass').val()
  let passport = $('#eId').val()
- let gender =  $("input[name=gender]:checked").val()
+ let status = $('#stat').val()
+ let gender =  $("input[name=genderE]:checked").val()
+ let priceUp = $('#priceEdit').val() - $('#priceEditBerdi').val()
+
 
  if (ism.trim() == "") {
   $("#sucMsg20").html(
@@ -253,7 +278,9 @@ function upStu(){
       sanaK : sanaK,
       parol : parol,
       passport : passport,
+      status: status,
       gender : gender,
+      priceUp : priceUp,
     },
     success: function (data) {
       if (data == "OK") {

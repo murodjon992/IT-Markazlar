@@ -37,7 +37,7 @@ if (!isset($_SESSION['is_login'])) {
         $usPass = $_POST['usPass'];
         $manzilAd = mysqli_real_escape_string($conn, $_POST['manzilAd']);
 
-        $sql = "SELECT us_email, us_pass, us_man, us_name FROM ustalar WHERE us_email = '". $usLogEmail ."' AND us_pass = '".$usPass."' AND us_man = '".$manzilAd."'";
+        $sql = "SELECT us_email, us_pass, us_man FROM ustalar WHERE us_email = '". $usLogEmail ."' AND us_pass = '".$usPass."' AND us_man = '".$manzilAd."'";
 
         $result = $conn->query($sql);
         $row = $result->num_rows;
@@ -47,7 +47,6 @@ if (!isset($_SESSION['is_login'])) {
             $_SESSION['is_login'] = true;
             $_SESSION['usLogEmail'] = $usLogEmail;
             $_SESSION['usMan'] = $manzilAd;
-            $_SESSION['us_name'] = $usName;
         } else if($row === 0){
             echo json_encode($row);
         }
