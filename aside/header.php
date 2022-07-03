@@ -47,10 +47,8 @@ $user_id = $_SESSION['user_id'];
             <button class='btn btn-warning ml-4' type='button' data-toggle='tooltip' data-placement='bottom' title='Profil haqida'>Profilim</button>
         <?
         } else {
-            echo '
-                        <button data-placement="bottom" title="Akkauntga kirish" class="btn btn-success" type="button" data-toggle="modal" data-target="#staticKirish"><i class="fas fa-sign-in-alt"></i></button>
-                <button  class="btn btn-warning ml-4" type="button" data-toggle="modal" data-target="#staticBackdrop">Ro\'yhatdan o\'tish</button>
-                        ';
+            echo '<button data-placement="bottom" title="Akkauntga kirish" class="btn btn-success mr-4" type="button" data-toggle="modal" data-target="#staticKirish"><i class="fas fa-sign-in-alt"></i></button>
+            ';
         }
 
         ?>
@@ -59,3 +57,59 @@ $user_id = $_SESSION['user_id'];
 
         <!-- </div> -->
     </nav>
+
+
+     <!-- user login -->
+     <div class="modal fade" id="staticKirish" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticKirishLabel" aria-hidden="true">
+        <div class="modal-dialog modalCenter">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticKirishLabel">Kirish</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-10 offset-1">
+                                <label for="text"><i class="fas fa-at"></i> Email *</label>
+                                <input type="email" id="usLogEmail" class="form-control inp" placeholder="Elektron pochta">
+
+                                <label for="text"><i class="fas fa-lock"></i> Parol *</label>
+                                <input type="password" id="usPass" class="form-control inp" placeholder="parolni kiriting">
+
+                                <div id="manAdmin" class="selAdminMan mt-4">
+                                    <select class="form-control" name="manzil" id="manzilA">
+                                        <option value="">Manzilni tanlang</option>
+                                        <option value="Andijon Shaxar">Andijon Shaxar</option>
+                                        <option value="Andijon Tuman">Andijon Tuman</option>
+                                        <option value="Asaka">Asaka</option>
+                                        <option value="Baliqchi">Baliqchi</option>
+                                        <option value="Buloqboshi">Buloqboshi</option>
+                                        <option value="Bo'ston">Bo'ston</option>
+                                        <option value="Izboskan">Izboskan</option>
+                                        <option value="Jalaquduq">Jalaquduq</option>
+                                        <option value="Marxamat">Marxamat</option>
+                                        <option value="Paxtaobod">Paxtaobod</option>
+                                        <option value="Oltinko'l">Oltinko'l</option>
+                                        <option value="Qo'rg'ontepa">Qo'rg'ontepa</option>
+                                        <option value="Shaxrixon">Shaxrixon</option>
+                                        <option disabled value="Ulug'nor">Ulug'nor</option>
+                                        <option value="Xo'jaobod">Xo'jaobod</option>
+                                        <option value="Xonobod">Xonobod</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <small id="statusLogMsg"></small>
+                    <button type="button" onclick="checkLogin()" class="btn btn-success">Kirish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- user login end -->

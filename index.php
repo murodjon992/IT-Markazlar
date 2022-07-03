@@ -29,7 +29,7 @@ $user_id = $_SESSION['user_id'];
                     <li class="nav-item custom_nav"><a href="index.php" class="nav-link">Home</a></li>
                     <li class="nav-item custom_nav"><a href="/galereya.php" class="nav-link">Galereya</a></li>
                     <li class="nav-item custom_nav"><a href="/markaz.php" class="nav-link">Markazlar</a></li>
-                    <li class="nav-item custom_nav"><a href="./managers/selp.php" class="nav-link">Kurs narxlari</a></li>
+                    <li class="nav-item custom_nav"><a href="/narx.php" class="nav-link">Kurs narxlari</a></li>
 
                 </ul>
             </div>
